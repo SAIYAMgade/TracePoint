@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="360" rx="14" fill="#090d16" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="30" y="36" font-family="-apple-system, sans-serif" font-size="16" font-weight="700" fill="#f8fafc">
+    TracePoint Defect Lifecycle & State Machine Guards
+  </text>
+  <text x="30" y="56" font-family="ui-monospace, monospace" font-size="11" fill="#64748b">
+    Enforced by PKG_DEFECT_LIFECYCLE (Oracle PL/SQL) & DefectService (FastAPI)
+  </text>
+
+  <!-- Node 1: OPEN -->
+  <g transform="translate(40, 100)">
+    <rect width="120" height="60" rx="8" fill="url(#nodeGrad)" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="60" y="32" font-family="ui-monospace, monospace" font-size="13" font-weight="800" fill="#38bdf8" text-anchor="middle">OPEN</text>
+    <text x="60" y="48" font-family="-apple-system, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Initial Triage</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 160 130 L 195 130" stroke="#64748b" stroke-width="2" marker-end="url(#arr)" />
+
+  <!-- Node 2: REPRODUCED -->
+  <g transform="translate(200, 100)">
+    <rect width="130" height="60" rx="8" fill="url(#nodeGrad)" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="65" y="32" font-family="ui-monospace, monospace" font-size="12" font-weight="800" fill="#fbbf24" text-anchor="middle">REPRODUCED</text>
+    <text x="65" y="48" font-family="-apple-system, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Deterministic Fixture</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 330 130 L 365 130" stroke="#64748b" stroke-width="2" />
+
+  <!-- Node 3: INVESTIGATING -->
+  <g transform="translate(370, 100)">
+    <rect width="140" height="60" rx="8" fill="url(#nodeGrad)" stroke="#c084fc" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="70" y="32" font-family="ui-monospace, monospace" font-size="12" font-weight="800" fill="#c084fc" text-anchor="middle">INVESTIGATING</text>
+    <text x="70" y="48" font-family="-apple-system, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Hypothesis & Evidence</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <path d="M 510 130 L 545 130" stroke="#64748b" stroke-width="2" />
+
+  <!-- Node 4: FIX_PROPOSED -->
+  <g transform="translate(550, 100)">
+    <rect width="130" height="60" rx="8" fill="url(#nodeGrad)" stroke="#818cf8" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="65" y="32" font-family="ui-monospace, monospace" font-size="12" font-weight="800" fill="#818cf8" text-anchor="middle">FIX_PROPOSED</text>
+    <text x="65" y="48" font-family="-apple-system, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Code / DDL Ready</text>
+  </g>
+
+  <!-- Arrow 4 -> 5 -->
+  <path d="M 680 130 L 715 130" stroke="#64748b" stroke-width="2" />
+
+  <!-- Node 5: VALIDATION_REQ -->
+  <g transform="translate(720, 100)">
+    <rect width="140" height="60" rx="8" fill="url(#nodeGrad)" stroke="#fb7185" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="70" y="28" font-family="ui-monospace, monospace" font-size="11" font-weight="800" fill="#fb7185" text-anchor="middle">VALIDATION</text>
+    <text x="70" y="42" font-family="ui-monospace, monospace" font-size="11" font-weight="800" fill="#fb7185" text-anchor="middle">REQUIRED</text>
+    <text x="70" y="54" font-family="-apple-system, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">Awaiting Test Run</text>
+  </g>
+
+  <!-- Down & Left Arrow to Verified -->
+  <path d="M 790 160 L 790 230 L 685 230" stroke="#10b981" stroke-width="2" />
+
+  <!-- Guard Callout -->
+  <g transform="translate(710, 185)">
+    <rect width="165" height="36" rx="4" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+    <text x="82" y="16" font-family="ui-monospace, monospace" font-size="9" font-weight="700" fill="#6ee7b7" text-anchor="middle">INTEGRITY GUARD</text>
+    <text x="82" y="28" font-family="-apple-system, sans-serif" font-size="8" fill="#a7f3d0" text-anchor="middle">Requires Test Run + Evidence</text>
+  </g>
+
+  <!-- Node 6: VERIFIED -->
+  <g transform="translate(550, 200)">
+    <rect width="130" height="60" rx="8" fill="url(#nodeGrad)" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+    <text x="65" y="32" font-family="ui-monospace, monospace" font-size="13" font-weight="800" fill="#34d399" text-anchor="middle">VERIFIED</text>
+    <text x="65" y="48" font-family="-apple-system, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Regression Guard Passed</text>
+  </g>
+
+  <!-- Arrow 6 -> 7 -->
+  <path d="M 550 230 L 485 230" stroke="#64748b" stroke-width="2" />
+
+  <!-- Node 7: CLOSED -->
+  <g transform="translate(350, 200)">
+    <rect width="130" height="60" rx="8" fill="url(#nodeGrad)" stroke="#64748b" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="65" y="32" font-family="ui-monospace, monospace" font-size="13" font-weight="800" fill="#94a3b8" text-anchor="middle">CLOSED</text>
+    <text x="65" y="48" font-family="-apple-system, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Released & Archived</text>
+  </g>
+
+  <!-- Reopen Regression Path -->
+  <path d="M 415 260 L 415 310 L 100 310 L 100 160" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4" />
+  <g transform="translate(200, 295)">
+    <rect width="120" height="22" rx="4" fill="#450a0a" stroke="#dc2626" stroke-width="0.8"/>
+    <text x="60" y="15" font-family="ui-monospace, monospace" font-size="9" font-weight="700" fill="#fca5a5" text-anchor="middle">REOPEN ON REGRESSION</text>
+  </g>
+</svg>

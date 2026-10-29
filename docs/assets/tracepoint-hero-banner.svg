@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c14" />
+      <stop offset="50%" stop-color="#0e1526" />
+      <stop offset="100%" stop-color="#151a30" />
+    </linearGradient>
+    <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4338ca" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.7" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Subtle grid lines -->
+  <g stroke="#1e293b" stroke-width="0.5" opacity="0.4">
+    <line x1="0" y1="70" x2="1200" y2="70" />
+    <line x1="0" y1="140" x2="1200" y2="140" />
+    <line x1="0" y1="210" x2="1200" y2="210" />
+    <line x1="0" y1="280" x2="1200" y2="280" />
+    <line x1="0" y1="350" x2="1200" y2="350" />
+    <line x1="200" y1="0" x2="200" y2="420" />
+    <line x1="400" y1="0" x2="400" y2="420" />
+    <line x1="600" y1="0" x2="600" y2="420" />
+    <line x1="800" y1="0" x2="800" y2="420" />
+    <line x1="1000" y1="0" x2="1000" y2="420" />
+  </g>
+
+  <!-- Brand / Title -->
+  <g transform="translate(60, 50)">
+    <!-- Logo Icon -->
+    <rect width="48" height="48" rx="12" fill="url(#indigoGrad)" filter="url(#glow)"/>
+    <text x="24" y="32" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle">TP</text>
+
+    <!-- App Title -->
+    <text x="64" y="28" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="28" font-weight="800" fill="#f8fafc" letter-spacing="-0.5">TRACEPOINT</text>
+    <rect x="250" y="10" width="84" height="22" rx="6" fill="#1e1b4b" stroke="#4338ca" stroke-width="1"/>
+    <text x="292" y="25" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#a5b4fc" text-anchor="middle">ORACLE ASE-1</text>
+    
+    <text x="64" y="46" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="500" fill="#94a3b8">
+      Engineering Intelligence • Root-Cause Analysis • Automated Testing • Release Reliability
+    </text>
+  </g>
+
+  <!-- Metric Badges Row -->
+  <g transform="translate(60, 130)">
+    <!-- Card 1: Open Defects -->
+    <rect x="0" y="0" width="250" height="110" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <text x="20" y="30" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="0.5">ACTIVE DEFECTS</text>
+    <text x="20" y="68" font-family="ui-monospace, monospace" font-size="32" font-weight="800" fill="#f8fafc">5</text>
+    <text x="46" y="65" font-family="-apple-system, sans-serif" font-size="12" fill="#ef4444" font-weight="600">TRIAGED</text>
+    <rect x="20" y="80" width="46" height="18" rx="4" fill="#450a0a" stroke="#991b1b" stroke-width="0.8"/>
+    <text x="43" y="93" font-family="ui-monospace, monospace" font-size="9" font-weight="700" fill="#fca5a5" text-anchor="middle">1 CRIT</text>
+    <rect x="72" y="80" width="46" height="18" rx="4" fill="#451a03" stroke="#9a3412" stroke-width="0.8"/>
+    <text x="95" y="93" font-family="ui-monospace, monospace" font-size="9" font-weight="700" fill="#fdba74" text-anchor="middle">3 HIGH</text>
+    <rect x="124" y="80" width="46" height="18" rx="4" fill="#172554" stroke="#1e40af" stroke-width="0.8"/>
+    <text x="147" y="93" font-family="ui-monospace, monospace" font-size="9" font-weight="700" fill="#93c5fd" text-anchor="middle">1 MED</text>
+
+    <!-- Card 2: Regression Guard -->
+    <rect x="275" y="0" width="250" height="110" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <text x="295" y="30" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="0.5">REGRESSION SUITE</text>
+    <text x="295" y="68" font-family="ui-monospace, monospace" font-size="32" font-weight="800" fill="#10b981">100%</text>
+    <text x="385" y="65" font-family="-apple-system, sans-serif" font-size="12" fill="#34d399" font-weight="600">ISOLATED</text>
+    <text x="295" y="92" font-family="-apple-system, sans-serif" font-size="11" fill="#64748b">23 Executed • 0 Flaky</text>
+
+    <!-- Card 3: Release Readiness Gate -->
+    <rect x="550" y="0" width="250" height="110" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <text x="570" y="30" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="0.5">RELEASE READINESS</text>
+    <text x="570" y="68" font-family="ui-monospace, monospace" font-size="32" font-weight="800" fill="#f43f5e">45%</text>
+    <rect x="640" y="50" width="68" height="20" rx="4" fill="#4c0519" stroke="#be123c" stroke-width="1"/>
+    <text x="674" y="64" font-family="ui-monospace, monospace" font-size="10" font-weight="800" fill="#fda4af" text-anchor="middle">BLOCKED</text>
+    <text x="570" y="92" font-family="-apple-system, sans-serif" font-size="11" fill="#64748b">Mandatory Gate Tripped</text>
+
+    <!-- Card 4: Database Health -->
+    <rect x="825" y="0" width="315" height="110" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <text x="845" y="30" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="0.5">DATABASE INTEGRITY</text>
+    <text x="845" y="68" font-family="ui-monospace, monospace" font-size="24" font-weight="700" fill="#38bdf8">ORACLE DDL</text>
+    <text x="845" y="92" font-family="-apple-system, sans-serif" font-size="11" fill="#64748b">PL/SQL Packages • Pre/Post Validation</text>
+  </g>
+
+  <!-- Technical Pipeline Flow -->
+  <g transform="translate(60, 270)">
+    <rect x="0" y="0" width="1080" height="115" rx="12" fill="#0b1120" stroke="#1e293b" stroke-width="1.5"/>
+    
+    <text x="25" y="28" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#818cf8" letter-spacing="0.5">
+      CORE ENGINEERING WORKFLOW PIPELINE
+    </text>
+
+    <!-- Step 1 -->
+    <g transform="translate(25, 42)">
+      <rect width="180" height="52" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="12" y="22" font-family="ui-monospace, monospace" font-size="10" font-weight="700" fill="#f8fafc">1. REPRODUCE</text>
+      <text x="12" y="38" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">Deterministic Synthetic Fixtures</text>
+    </g>
+
+    <path d="M 215 68 L 245 68" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow)" />
+
+    <!-- Step 2 -->
+    <g transform="translate(250, 42)">
+      <rect width="180" height="52" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="12" y="22" font-family="ui-monospace, monospace" font-size="10" font-weight="700" fill="#f8fafc">2. INVESTIGATE</text>
+      <text x="12" y="38" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">Evidence-Backed Root Cause</text>
+    </g>
+
+    <path d="M 440 68 L 470 68" stroke="#6366f1" stroke-width="2" />
+
+    <!-- Step 3 -->
+    <g transform="translate(475, 42)">
+      <rect width="180" height="52" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="12" y="22" font-family="ui-monospace, monospace" font-size="10" font-weight="700" fill="#f8fafc">3. REGRESSION TEST</text>
+      <text x="12" y="38" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">Automated Pytest Isolation</text>
+    </g>
+
+    <path d="M 665 68 L 695 68" stroke="#6366f1" stroke-width="2" />
+
+    <!-- Step 4 -->
+    <g transform="translate(700, 42)">
+      <rect width="180" height="52" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="12" y="22" font-family="ui-monospace, monospace" font-size="10" font-weight="700" fill="#f8fafc">4. VALIDATE SCHEMA</text>
+      <text x="12" y="38" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">Pre-Check • DDL • Post-Check</text>
+    </g>
+
+    <path d="M 890 68 L 920 68" stroke="#6366f1" stroke-width="2" />
+
+    <!-- Step 5 -->
+    <g transform="translate(925, 42)">
+      <rect width="130" height="52" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+      <text x="12" y="22" font-family="ui-monospace, monospace" font-size="10" font-weight="700" fill="#34d399">5. RELEASE GATE</text>
+      <text x="12" y="38" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">Objective Go/No-Go</text>
+    </g>
+  </g>
+</svg>
